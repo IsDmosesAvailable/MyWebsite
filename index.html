@@ -1,42 +1,111 @@
 <html>
     <head>
     <title>I've Been Waiting For You</title>
-    </head>
 
-    <body style="background-color:rgb(48, 0, 65);">
-<h3>Would you like to take a quiz?
-</h3>
-<h4>Clicking the <h4 style="color:rgb(255, 0, 0);"> red X <h4>won't save you </h4>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This link and 2 scripts load the Bootstrap CSS stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+    <style>
+        div {
+            color: rgb(255, 170, 0);
+        }
+   </style>
+</head>
+
+<body style="background-color:rgb(48, 0, 65);">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Advanced CS Reflection</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span> 
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a class="nav-link" href="Responses.html">Responses</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+<br>
+
+<div class="container-fluid">
+
+
+<div class="alert alert-danger" role="alert">
+    Would you like to take a quiz?
+<br>
+Clicking the red X won't save you 
+</div>
 <!-- Saving colors for later (teal)rgb(0, 255, 255) (darkpurple)rgb(48, 0, 65)  (darkblue)rgb(0, 0, 44) (halloweenorange) rgb(255, 170, 0) -->
 
 <!--  I'm leaving this for an example for myself for when I get to this part -->
 
-<p>Would you like to play a game? </p> 
-<td style="border:1px solid rgb(0, 0, 44);"><img src="Jigsaw.png" width="400" height="250"></td>
+<div class="alert alert-secondary" role="alert">
+    Would you like to play a game? 
+</div>
+                <!-- Container is a table -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-18">
 
-<p> Do you know why your here? </p>
-    <textarea rows="2" cols="150">Your answer</textarea>
+                            <img class="img-fluid" src="Jigsaw.png">
+                        </div>
+                    </div>
+                </div>
 
-<p> Do you remember what you did? </p>
-    <textarea rows="2" cols="150">Your answer</textarea>
+<form>
+    <div class="form-group">
+        <label for="Do you know?">Do you know why your here?
+*</label>
+        <textarea class="form-control" id="Do you know?" rows="3"></textarea>
+    </div>
 
-<p> Would you like to end this immediately? </p>
-    <textarea rows="2" cols="150">Your answer</textarea>
+    <div class="Do you remember?">
+        <label for="skills">Do you remember what you did?
+*</label>
+        <textarea class="form-control" id="Do you remember?" rows="3"></textarea>
+    </div>
 
-<p> What would you like to play? </p>
-    <textarea rows="2" cols="150">Your answer</textarea>
+    <div class="form-group">
+        <label for="Would you?">Would you like to end this immediately?
+*</label>
+        <textarea class="form-control" id="Would you?" rows="3"></textarea>
+    </div>
 
-<p> Who would you like to see? </p>
-    <textarea rows="2" cols="150">Your answer</textarea>
+    <div class="form-group">
+        <label for="What would you?">What would you like to play?
+*</label>
+        <textarea class="form-control" id="What would you?" rows="3"></textarea>
+    </div>
 
-<p> Will you endure? </p>
-    <textarea rows="2" cols="150">Your answer</textarea>
-    
-<button type="button" onclick="alert('Your Fate Will Be Evaluated');">
-    Your Fate?
-</button>
+    <div class="form-group">
+        <label for="Who would you?">Who would you like to see?
+*</label>
+        <textarea class="form-control" id="Who would you?" rows="3"></textarea>
+    </div>
 
-<p></p>
+    <div class="form-group">
+        <label for="Will you?">Will you endure?
+*</label>
+        <textarea class="form-control" id="Will you?" rows="3"></textarea>
+    </div>
+
+
+    <button type="button" class="btn btn-primary btn-lg btn-block" submit onclick="alert('Your Fate?')">Submit</button>
+    <br>
+
+</form>
+
+<br>
 <a href="https://www.youtube.com/watch?v=P4WeWD8L8Ik">Want to see something scary?</a>
+
+</div>
+
 </body>
 </html>
