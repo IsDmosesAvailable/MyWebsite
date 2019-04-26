@@ -37,7 +37,7 @@
 <div class="container-fluid">
 
 
-<div class="alert alert-danger" role="alert">
+<div id="set0" class="alert alert-danger" role="alert">
     Would you like to take a quiz?
 <br>
 Clicking the red X won't save you 
@@ -46,18 +46,19 @@ Clicking the red X won't save you
 
 <!--  I'm leaving this for an example for myself for when I get to this part -->
 
-<div class="alert alert-secondary" role="alert">
+<div id="set1" class="alert alert-secondary" role="alert">
     Would you like to play a game? 
 </div>
                 <!-- Container is a table -->
-                <div class="holder">
+                <div id="set2" class="holder">
                 
 
                     <img class="img-fluid" src="Jigsaw.png">
                     
                 </div>
 
-<form>
+
+<form id="set3">
     <div class="form-group">
         <label for="Do you know?">Do you know why your here?
 *</label>
@@ -69,7 +70,12 @@ Clicking the red X won't save you
 *</label>
         <textarea class="form-control" id="Do you remember?" rows="3"></textarea>
     </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="next3" onclick="displayNextQuestions(3)">Next</button>
+        <br>
+    </form>
 
+
+    <form id="set4" style="display:none;">
     <div class="form-group">
         <label for="Would you?">Would you like to end this immediately?
 *</label>
@@ -81,29 +87,73 @@ Clicking the red X won't save you
 *</label>
         <textarea class="form-control" id="What would you?" rows="3"></textarea>
     </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="next4" onclick="displayNextQuestions(4)">Next</button>
+                <br>
+</form>
 
+<form id="set5" style="display:none;">
     <div class="form-group">
         <label for="Who would you?">Who would you like to see?
 *</label>
         <textarea class="form-control" id="Who would you?" rows="3"></textarea>
     </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="next5" onclick="displayNextQuestions(5)">Next</button>
+    <br>
 
+</form>
+
+<form id="set6" style="display:none;">
     <div class="form-group">
         <label for="Will you?">Will you endure?
 *</label>
         <textarea class="form-control" id="Will you?" rows="3"></textarea>
     </div>
 
-
-    <button type="button" class="btn btn-primary btn-lg btn-block" submit onclick="alert('Your Fate?')">Submit</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block" submit onclick="finish()">Submit</button>
     <br>
 
 </form>
 
-<br>
-<a href="https://www.youtube.com/watch?v=P4WeWD8L8Ik">Want to see something scary?</a>
-
+<div id="thanks" name="thanks" class="alert alert-primary" role="alert" style="display:none;">
+    Expect the results somepoint at night.
 </div>
 
+<div>
+<br>
+<a href="https://www.youtube.com/watch?v=P4WeWD8L8Ik">Want to see something scary?</a>
+</div>
+
+<script>
+
+    function displayNextQuestions(set) {
+        // set is which set of questions was just displayed
+        if (set > 0 && set < 6) {
+            // stop displaying the current next button 
+            var lastButton = document.getElementById("next"+set);
+            lastButton.style.display = "none";
+            // start displaying the next set (questions+button)
+            var nextQuestions = document.getElementById("set"+(set+1));
+            nextQuestions.style.display = "block";
+
+            // automatically scroll down to new questions
+            window.location = "#set"+(set+1);
+        }
+    }
+
+    function finish() {
+        alert('What is your fate?');
+                // stop displaying all of the alerts, questions, and buttons 
+                for (var i = 0; i < 7; i = i + 1) {
+                    var nextQuestions = document.getElementById("set"+i);
+                    nextQuestions.style.display = "none";
+                }
+                // start displaying the thanks alert
+                var thanksAlert = document.getElementById("thanks");
+                thanksAlert.style.display = "block";
+
+    }
+
+
+</script>
 </body>
 </html>
